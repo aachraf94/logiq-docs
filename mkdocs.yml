@@ -1,0 +1,97 @@
+site_name: LOGIQ
+site_description: >-
+  LOGIQ — a Business Intelligence decision-support system for logistics operations
+  and cost analysis: data warehouse, automated ETL pipeline, dashboards, proactive
+  alerting and an AI assistant.
+site_author: Achraf Abdelkebir
+site_url: https://aachraf94.github.io/logiq-docs/
+repo_url: https://github.com/aachraf94/logiq-docs
+repo_name: aachraf94/logiq-docs
+edit_uri: ""
+copyright: >-
+  &copy; 2026 Achraf Abdelkebir — Final-year project, ESI Algiers ·
+  Hosted by Ourquilane · Client: Yalidine El Djazair Services
+
+theme:
+  name: material
+  language: en
+  logo: assets/logiq-mark.png
+  favicon: assets/logiq-mark.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Project:
+      - Case study: case-study.md
+  - Solution:
+      - Architecture: architecture.md
+      - Data warehouse: data-warehouse.md
+      - ETL pipeline: etl-pipeline.md
+      - Dashboards & alerting: dashboards-alerting.md
+      - AI assistant: ai-assistant.md
+  - Outcomes:
+      - Testing & results: testing-results.md
+      - Future work: future-work.md
+  - Reference:
+      - Glossary: glossary.md
