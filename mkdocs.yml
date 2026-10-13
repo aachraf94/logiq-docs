@@ -15,8 +15,8 @@ copyright: >-
 theme:
   name: material
   language: en
-  logo: assets/logiq-mark.png
-  favicon: assets/logiq-mark.png
+  logo: assets/logiq-mark-on-dark.svg
+  favicon: assets/favicon.png
   icon:
     repo: fontawesome/brands/github
   palette:

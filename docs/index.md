@@ -7,8 +7,8 @@ hide:
 # LOGIQ { .hidden-title }
 
 <div class="logiq-hero" markdown>
-![LOGIQ](assets/logiq-logo-light.png#only-light)
-![LOGIQ](assets/logiq-logo-dark.png#only-dark)
+![LOGIQ](assets/logiq-logo-on-light.svg#only-light)
+![LOGIQ](assets/logiq-logo-on-dark.svg#only-dark)
 </div>
 
 <p class="logiq-tagline">Turning scattered logistics data into reliable, proactive decisions.</p>
