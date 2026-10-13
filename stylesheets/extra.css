@@ -1,0 +1,86 @@
+/* LOGIQ brand colours — taken from the LOGIQ logo (navy background, indigo bar). */
+:root > * {
+  --md-primary-fg-color: #161829;
+  --md-primary-fg-color--light: #2a2d4a;
+  --md-primary-fg-color--dark: #0e0f1c;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: #6366f1;
+  --md-accent-fg-color--transparent: rgba(99, 102, 241, 0.1);
+  --md-typeset-a-color: #4f46e5;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #161829;
+  --md-typeset-a-color: #8b8ff8;
+}
+
+/* Header logo already sits on the navy brand colour. */
+.md-header__button.md-logo img {
+  height: 1.6rem;
+  border-radius: 4px;
+}
+
+/* Hero block on the home page */
+.logiq-hero {
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+}
+.logiq-hero img {
+  max-width: 340px;
+  width: 70%;
+}
+.logiq-tagline {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0.5rem auto 1.5rem;
+  max-width: 40rem;
+}
+
+/* Screenshots and diagrams */
+.md-typeset figure img {
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+.md-typeset figure figcaption {
+  font-size: 0.72rem;
+  opacity: 0.85;
+  max-width: 44rem;
+}
+/* Diagrams with transparent backgrounds stay readable in dark mode */
+.md-typeset img.on-white {
+  background: #ffffff;
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+
+/* Partner logos: transparent PNGs with dark text, shown on white cards */
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+.partner-logos img {
+  background: #ffffff;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  height: 3.6rem;
+  width: auto;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Compact numbers column in the "At a glance" table */
+.md-typeset table:not([class]) td strong {
+  white-space: nowrap;
+}
+
+/* Home page: keep an H1 for SEO/accessibility but rely on the logo visually */
+.md-typeset h1.hidden-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

@@ -1,0 +1,1649 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LOGIQ — a Business Intelligence decision-support system for logistics operations and cost analysis: data warehouse, automated ETL pipeline, dashboards, proactive alerting and an AI assistant.">
+      
+      
+        <meta name="author" content="Achraf Abdelkebir">
+      
+      
+        <link rel="canonical" href="https://aachraf94.github.io/logiq-docs/dashboards-alerting/">
+      
+      
+        <link rel="prev" href="../etl-pipeline/">
+      
+      
+        <link rel="next" href="../ai-assistant/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logiq-mark.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Dashboards & alerting - LOGIQ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboards-alerting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LOGIQ" class="md-header__button md-logo" aria-label="LOGIQ" data-md-component="logo">
+      
+  <img src="../assets/logiq-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LOGIQ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dashboards & alerting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/aachraf94/logiq-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aachraf94/logiq-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LOGIQ" class="md-nav__button md-logo" aria-label="LOGIQ" data-md-component="logo">
+      
+  <img src="../assets/logiq-mark.png" alt="logo">
+
+    </a>
+    LOGIQ
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/aachraf94/logiq-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aachraf94/logiq-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Solution
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-warehouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data warehouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../etl-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ETL pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards & alerting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards & alerting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-axes-three-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two axes, three views
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualisation-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualisation toolkit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualisation toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifiable-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifiable KPIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proactive-alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proactive alerting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences-and-multilingual-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences and multilingual support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graceful-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graceful degradation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outcomes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Outcomes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing-results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../future-work/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future work
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-axes-three-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The two axes, three views
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualisation-toolkit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualisation toolkit
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualisation toolkit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verifiable-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifiable KPIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proactive-alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proactive alerting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preferences-and-multilingual-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences and multilingual support
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Administration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graceful-degradation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graceful degradation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dashboards-alerting">Dashboards &amp; alerting<a class="headerlink" href="#dashboards-alerting" title="Permanent link">&para;</a></h1>
+<p>The warehouse holds the data and the pipeline keeps it fresh. The <strong>application platform</strong> is
+where decision-makers actually read it: a Next.js single-page application over a role-aware
+Django <abbr title="Representational State Transfer">REST</abbr> <abbr title="Application Programming Interface">API</abbr>, which never touches a database directly.</p>
+<div class="admonition note">
+<p class="admonition-title">Synthetic data</p>
+<p>All screenshots on this page show the platform populated with the <strong>synthetic test dataset</strong>.</p>
+</div>
+<h2 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h2>
+<p>The interface follows the way the business reasons: <strong>two axes</strong>, each read through <strong>three
+views</strong>, plus a consolidated overview and supporting areas. Navigation is <strong>filtered by role</strong>,
+so the menu itself reflects each user's permissions.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What it presents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overview</td>
+<td>The headline indicators of both axes side by side</td>
+</tr>
+<tr>
+<td>Parcel Delivery</td>
+<td>Operations · Cost &amp; Profitability · Performance</td>
+</tr>
+<tr>
+<td>On-Demand Dedicated Transport</td>
+<td>The same three views, on a strictly separate financial perimeter</td>
+</tr>
+<tr>
+<td>Alerts</td>
+<td>Alerts raised or subscribed to, with status and history</td>
+</tr>
+<tr>
+<td>Preferences</td>
+<td>Saved filters, notification channels, theme and language</td>
+</tr>
+<tr>
+<td>Administration</td>
+<td>User activation, role assignment, pipeline supervision (administrators only)</td>
+</tr>
+</tbody>
+</table>
+<p>Users sign in with the credentials of the company HR system. There are no separate LOGIQ
+passwords to manage.</p>
+<figure>
+  <img alt="Sign-in screen" loading="lazy" src="../assets/login.png" />
+<br />
+<figcaption>The sign-in screen.</figcaption>
+</figure>
+<h2 id="the-two-axes-three-views">The two axes, three views<a class="headerlink" href="#the-two-axes-three-views" title="Permanent link">&para;</a></h2>
+<p>Every page shows <strong>five <abbr title="Key Performance Indicator">KPI</abbr> cards</strong> above <strong>two rows of two charts</strong>. A <strong>global filter bar</strong> is
+shared across the page, so changing it re-synchronises every visualisation. A filter set can be
+saved as a named <strong>bookmark</strong> for one-click return.</p>
+<table>
+<thead>
+<tr>
+<th>Filter</th>
+<th>Control</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quick range</td>
+<td>Pills</td>
+<td>7 d / 30 d / 90 d / year-to-date</td>
+</tr>
+<tr>
+<td>Custom range</td>
+<td>Date pickers</td>
+<td>Any window within the available history</td>
+</tr>
+<tr>
+<td>Type (parcel axis)</td>
+<td>Dropdown</td>
+<td>All / home delivery / stop-desk</td>
+</tr>
+<tr>
+<td>Type (transport axis)</td>
+<td>Dropdown</td>
+<td>All / dedicated trip / courier / handling</td>
+</tr>
+</tbody>
+</table>
+<p>All monetary values are in <abbr title="Algerian Dinar">DZD</abbr>. Thresholds mentioned below are configurable user defaults, not
+fixed limits.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Transport · Operations</label><label for="__tabbed_1_2">Transport · Cost &amp; Profitability</label><label for="__tabbed_1_3">Transport · Performance</label><label for="__tabbed_1_4">Parcel · Operations</label><label for="__tabbed_1_5">Parcel · Cost &amp; Profitability</label><label for="__tabbed_1_6">Parcel · Performance</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th><abbr title="Key Performance Indicator">KPI</abbr></th>
+<th>Formula (pseudo)</th>
+<th>Business value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total requests</td>
+<td>COUNT(*) over created date</td>
+<td>Demand volume</td>
+</tr>
+<tr>
+<td>Completion rate %</td>
+<td>completed / total × 100</td>
+<td>Fulfilment level</td>
+</tr>
+<tr>
+<td>Cancellation rate %</td>
+<td>cancelled / total × 100</td>
+<td>Lost demand (watch above 10 %)</td>
+</tr>
+<tr>
+<td>Avg distance (km)</td>
+<td>AVG(measured real distance)</td>
+<td>Trip length / routing</td>
+</tr>
+<tr>
+<td>Avg stops / request</td>
+<td>AVG(stops)</td>
+<td>Logistical complexity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Charts:</strong> monthly volume (stacked bar) · service breakdown (donut) · origin–destination
+(heatmap) · distance category (bar).</p>
+<p><img alt="Transport — Operations" loading="lazy" src="../assets/dash-transport-operations.png" /></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th><abbr title="Key Performance Indicator">KPI</abbr></th>
+<th>Formula (pseudo)</th>
+<th>Business value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total revenue</td>
+<td>SUM(amount invoiced)</td>
+<td>Billed revenue</td>
+</tr>
+<tr>
+<td>Total cost</td>
+<td>SUM(8 cost components)</td>
+<td>Cost build-up per trip</td>
+</tr>
+<tr>
+<td>Gross margin</td>
+<td>revenue − cost</td>
+<td>Absolute profit</td>
+</tr>
+<tr>
+<td>Margin %</td>
+<td>margin / revenue × 100</td>
+<td>Profitability (target above 20 %)</td>
+</tr>
+<tr>
+<td>Cost / km</td>
+<td>cost / distance</td>
+<td>Unit economics</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Charts:</strong> revenue vs cost (combo) · cost categories (ranked bar) · cost per km by vehicle
+(bar) · top corridors by margin (ranked bar).</p>
+<p><img alt="Transport — Cost &amp; Profitability" loading="lazy" src="../assets/dash-transport-cost.png" /></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th><abbr title="Key Performance Indicator">KPI</abbr></th>
+<th>Formula (pseudo)</th>
+<th>Business value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>On-time rate %</td>
+<td>on-time / rated × 100</td>
+<td>Punctuality (alert below 80 %)</td>
+</tr>
+<tr>
+<td>Avg duration (h)</td>
+<td>AVG(duration) / 60</td>
+<td>Trip duration</td>
+</tr>
+<tr>
+<td>Avg client rating</td>
+<td>AVG(rating), out of 5</td>
+<td>Experience (below 3.5 = degraded)</td>
+</tr>
+<tr>
+<td>Avg arrival delay (min)</td>
+<td>AVG(actual − planned arrival)</td>
+<td>Schedule adherence</td>
+</tr>
+<tr>
+<td>Night-shift rate %</td>
+<td>night / total × 100</td>
+<td>Night-surcharge exposure</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Charts:</strong> on-time trend (dual-axis lines) · delay distribution (bar) · rating distribution
+(bar) · on-time by vehicle (bar).</p>
+<p><img alt="Transport — Performance" loading="lazy" src="../assets/dash-transport-performance.png" /></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th><abbr title="Key Performance Indicator">KPI</abbr></th>
+<th>Formula (pseudo)</th>
+<th>Business value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parcels handled</td>
+<td>COUNT(*) over creation date</td>
+<td>Raw activity volume</td>
+</tr>
+<tr>
+<td>Delivered</td>
+<td>COUNT FILTER status = Delivered</td>
+<td>Successful deliveries</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>COUNT FILTER status = Returned</td>
+<td>Cost incurred without delivery revenue</td>
+</tr>
+<tr>
+<td>In transit</td>
+<td>COUNT FILTER not terminal</td>
+<td>Live backlog still moving</td>
+</tr>
+<tr>
+<td>Avg delivery duration</td>
+<td>AVG(duration) / 60 FILTER Delivered</td>
+<td>Speed of service (hours)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Charts:</strong> volume trend (stacked bar) · status breakdown (donut) · region flow (heatmap) ·
+zone distribution (bar).</p>
+<p><img alt="Parcel — Operations" loading="lazy" src="../assets/dash-parcel-operations.png" /></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th><abbr title="Key Performance Indicator">KPI</abbr></th>
+<th>Formula (pseudo)</th>
+<th>Business value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fees collected</td>
+<td>SUM(delivery fee)</td>
+<td>Revenue of the parcel segment</td>
+</tr>
+<tr>
+<td>Operational cost</td>
+<td>SUM(validated charges) + SUM(salaries)</td>
+<td>Total cost to serve</td>
+</tr>
+<tr>
+<td>Gross margin %</td>
+<td>(fees − cost) / fees × 100</td>
+<td>Profitability of the axis</td>
+</tr>
+<tr>
+<td>Avg fee / parcel</td>
+<td>fees / delivered</td>
+<td>Average unit revenue</td>
+</tr>
+<tr>
+<td>Cost / delivered parcel</td>
+<td>cost / delivered</td>
+<td>Unit cost; loss-making above the fee</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Charts:</strong> revenue vs cost (combo) · expenses by category (bar) · regional margin (heatmap) ·
+zone profitability (dual-axis).</p>
+<p><img alt="Parcel — Cost &amp; Profitability" loading="lazy" src="../assets/dash-parcel-cost.png" /></p>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th><abbr title="Key Performance Indicator">KPI</abbr></th>
+<th>Formula (pseudo)</th>
+<th>Business value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delivery rate %</td>
+<td>delivered / created × 100</td>
+<td>Service level (alert below 73 %)</td>
+</tr>
+<tr>
+<td>Avg attempts</td>
+<td>AVG(attempts + 1) FILTER Delivered</td>
+<td>Field efficiency</td>
+</tr>
+<tr>
+<td>1st-attempt success %</td>
+<td>first-try delivered / delivered × 100</td>
+<td>Right-first-time quality</td>
+</tr>
+<tr>
+<td>Avg delivery duration</td>
+<td>AVG(duration) / 60 FILTER Delivered</td>
+<td>Speed of service (hours)</td>
+</tr>
+<tr>
+<td>Claims declared</td>
+<td>COUNT(reimbursements)</td>
+<td>Packaging / handling quality signal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Charts:</strong> monthly performance (dual-axis lines) · duration distribution (histogram) · top
+expedition centres (ranked bar) · claims by type (donut).</p>
+<p><img alt="Parcel — Performance" loading="lazy" src="../assets/dash-parcel-performance.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="visualisation-toolkit">Visualisation toolkit<a class="headerlink" href="#visualisation-toolkit" title="Permanent link">&para;</a></h2>
+<p>The dashboards are <strong>visual-first</strong>. Each <abbr title="Key Performance Indicator">KPI</abbr> is a chart or graphic, with the exact figures one
+click away.</p>
+<table>
+<thead>
+<tr>
+<th>Visualisation</th>
+<th>Library</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><abbr title="Key Performance Indicator">KPI</abbr> cards</td>
+<td>Tremor</td>
+<td>Headline figure, period-over-period delta, severity colour</td>
+</tr>
+<tr>
+<td>Statistical charts</td>
+<td>ECharts</td>
+<td>Trends, comparisons, composition, scatter, heatmap, gauge, radar, Sankey</td>
+</tr>
+<tr>
+<td>Custom diagrams</td>
+<td>D3.js</td>
+<td>Bespoke cost-flow and network visualisations</td>
+</tr>
+<tr>
+<td>Interactive maps</td>
+<td>Leaflet</td>
+<td>Geographic distribution of flows across the wilayas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="verifiable-kpis">Verifiable <abbr title="Key Performance Indicators">KPIs</abbr><a class="headerlink" href="#verifiable-kpis" title="Permanent link">&para;</a></h3>
+<p>Every <abbr title="Key Performance Indicator">KPI</abbr> card opens a <strong>data-table view</strong> that lists the individual records behind the headline
+figure. Opening <em>Total Requests</em>, for example, shows each request with its identifier, date,
+service, status, origin, destination, distance and stop count. Every <abbr title="Key Performance Indicator">KPI</abbr> thus becomes an
+<strong>auditable</strong> number rather than an opaque one.</p>
+<figure>
+  <img alt="KPI drill-down" loading="lazy" src="../assets/dash-kpi-drilldown.png" />
+<br />
+<figcaption>The data-table view behind the <em>Total Requests</em> card.</figcaption>
+</figure>
+<h2 id="proactive-alerting">Proactive alerting<a class="headerlink" href="#proactive-alerting" title="Permanent link">&para;</a></h2>
+<p>Presentation answers questions when they are asked. <strong>Alerting answers them before they are
+asked.</strong> A user defines a <strong>rule</strong> on a sensitive indicator:
+<em>metric · operator · threshold · severity · cooldown</em>.</p>
+<pre class="mermaid"><code>flowchart TB
+    R["Define rule&lt;br/&gt;metric · operator · threshold&lt;br/&gt;severity · cooldown"] --&gt; E["Scheduled evaluation&lt;br/&gt;(Celery worker)"]
+    E --&gt; C{"Threshold crossed&lt;br/&gt;and cooldown elapsed?"}
+    C -- "no" --&gt; E
+    C -- "yes" --&gt; A["Raise alert"]
+    P["ETL run events"] --&gt; A
+    A --&gt; I["In-app&lt;br/&gt;(real time)"]
+    A --&gt; M["E-mail"]</code></pre>
+<ul>
+<li>A periodic <strong>Celery</strong> task reads each active rule's value from the aggregate layer. The
+  <strong>cooldown</strong> stops a still-breached metric from alerting on every cycle.</li>
+<li>Alerts carry a <strong>severity</strong>: <em>info</em>, <em>warning</em> or <em>critical</em>.</li>
+<li>Delivery depends on <strong>subscriptions</strong> (a user only receives alerts for rules they subscribe to)
+  and on each user's <strong>channel preference</strong> (in-app, e-mail, or both).</li>
+<li><strong>In-app</strong> notifications are pushed in real time. <strong>E-mail</strong> covers <abbr title="Extract-Transform-Load">ETL</abbr>-run reports, and
+  alerts are grouped into a <strong>weekly digest</strong> sent every Sunday at 07:00.</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Alerts page</label><label for="__tabbed_2_2">Defining a rule</label><label for="__tabbed_2_3">Subscriptions</label><label for="__tabbed_2_4">Notification centre</label><label for="__tabbed_2_5">E-mails</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Alerts page" loading="lazy" src="../assets/alerts-page.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Create rule" loading="lazy" src="../assets/alerts-create-rule.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Alert subscriptions" loading="lazy" src="../assets/alerts-subscriptions.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Notification centre" loading="lazy" src="../assets/alerts-notification-centre.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Critical alert e-mail" loading="lazy" src="../assets/email-alert-critical.png" /></p>
+<p><img alt="ETL run e-mail" loading="lazy" src="../assets/email-etl-run.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="preferences-and-multilingual-support">Preferences and multilingual support<a class="headerlink" href="#preferences-and-multilingual-support" title="Permanent link">&para;</a></h2>
+<p>Each user picks a <strong>theme</strong> (light or dark), their notification channels and the interface
+<strong>language</strong>. LOGIQ ships in <strong>Arabic, French and English</strong>, with a complete right-to-left layout
+for Arabic. Preferences are stored on the operational database and re-applied at every session.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Preferences (Arabic)</label><label for="__tabbed_3_2">Dashboard (Arabic, RTL)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Preferences in Arabic" loading="lazy" src="../assets/preferences-arabic.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Parcel dashboard in Arabic" loading="lazy" src="../assets/dash-parcel-arabic.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="administration">Administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
+<p>Administrators keep full access to every business page. They also have an <strong>Administration</strong>
+area: a platform overview, the <strong>Users</strong> page (activate HR-imported accounts and assign roles),
+the <strong>Roles</strong> page (define what each role may reach), and the <strong><abbr title="Extract-Transform-Load">ETL</abbr> Runs</strong> history.</p>
+<p>The backend also exposes a <strong>webhook receiver</strong> for the HR system. When an employee is hired,
+leaves or has their details changed, the matching account is provisioned, revoked or updated
+automatically.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Admin overview</label><label for="__tabbed_4_2">Roles</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Admin overview" loading="lazy" src="../assets/admin-overview.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Roles" loading="lazy" src="../assets/admin-roles.png" /></p>
+</div>
+</div>
+</div>
+<h2 id="graceful-degradation">Graceful degradation<a class="headerlink" href="#graceful-degradation" title="Permanent link">&para;</a></h2>
+<p>The analytical and operational planes are separate, so a brief outage of the warehouse does not
+break the experience. The analytics endpoints <strong>fail safe</strong>: they return representative figures
+instead of an error, and the interface stays usable for real work and for demonstrations alike.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../etl-pipeline/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ETL pipeline">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                ETL pipeline
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ai-assistant/" class="md-footer__link md-footer__link--next" aria-label="Next: AI assistant">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                AI assistant
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2026 Achraf Abdelkebir — Final-year project, ESI Algiers · Hosted by Ourquilane · Client: Yalidine El Djazair Services
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
